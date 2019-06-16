@@ -11,6 +11,9 @@ Go to the search page by clicking the plus button.
 
 On the search page (path:_"/search"_), you can search for books from the database. Once the results come out, click on the book cover to see the details in the book. Click **"Want to read"** button can add the book to "Want to read" shelf in your llibrary. Use the drop-down list to move books to another shelf or remove it from shelf.
 
+### Live Version
+https://emma319.github.io/MyBookshelf/
+
 ## Get Start
 
 To get started by installing all project dependencies:
