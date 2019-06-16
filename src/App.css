@@ -1,0 +1,283 @@
+html, body, .root {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+}
+body, .app {
+  background: white;
+}
+
+/* main page */
+
+.list-books-title {
+  padding: 10px 0;
+  background: #2e7c31;
+  text-align: center;
+}
+.list-books-title h1 {
+  font-weight: 400;
+  margin: 0;
+  color: white;
+}
+
+.list-books-content {
+  padding: 0 0 50px;
+  flex: 1;
+}
+
+.bookshelf {
+  padding: 0 10px 20px;
+}
+
+@media (min-width: 600px) {
+  .bookshelf {
+    padding: 0 20px 40px;
+  }
+}
+
+.bookshelf-title {
+  border-bottom: 1px solid #dedede;
+}
+.bookshelf-books {
+  text-align: center;
+}
+
+.open-search {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+}
+.open-search a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2e7d32;
+  background-image: url('./icons/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-size: 0;
+}
+
+/* search page */
+
+.search-books-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+}
+.search-books-input-wrapper {
+  flex: 1;
+  background: #e9e;
+}
+.showing-search-result {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1em;
+}
+.search-books-bar input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1.25em;
+  border: none;
+  outline: none;
+}
+
+.close-search {
+  display: block;
+  top: 20px;
+  left: 15px;
+  width: 50px;
+  height: 53px;
+  background: white;
+  background-image: url('./icons/arrow-back.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0;
+}
+.search-books-results {
+  padding: 30px 10px 20px;
+}
+
+/* books grid */
+
+.books-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.books-grid li {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.book {
+  width: 140px;
+}
+.book-title,
+.book-authors,
+.book-section {
+  font-size: 0.8em;
+}
+.book-title {
+  margin-top: 10px;
+}
+.book-authors {
+  color: #999;
+}
+
+/* book cover */
+
+.book-top {
+  position: relative;
+  height: 220px;
+  display: flex;
+  /*align-items: flex-end;*/
+}
+.book-cover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: #eee;
+  width: 128px;
+  height: 193px;
+}
+.book-cover-title {
+  padding: 20px 10px 0;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/* book expand*/
+
+.book-expand {
+  z-index: 2;
+  position: fixed;
+  top: 60px;
+  left: 50px;
+  min-width: 90%;
+  min-height: 80%;
+  margin-right: 50px;
+  border-radius: 2%;
+  padding: 20px;
+  display: block;
+  background: whitesmoke;
+}
+.open-expand {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+}
+.close-expand {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  background-image: url('./icons/cancel.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0;
+}
+.close-expand-all{
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+}
+.book-expand-title {
+  font-size: 1em;
+  margin-top: 0;
+}
+.book-expand-subtitle {
+  font-size: 90%;
+  font-weight: normal;
+}
+.book-expand-top {
+  float: left;
+  margin-right: 12px;
+}
+.book-info .book-authors,
+.book-section {
+  color: #2f7b2b;
+}
+.book-synopsis {
+  font-size: 0.9em;
+  overflow: hidden;
+  max-height: 400px;
+}
+.book-detail {
+  cursor: pointer;
+  font-size: 0.95em;
+  color: #15c;
+  text-decoration: none;
+}
+.book-detail:hover{
+  text-decoration: underline;
+}
+
+/* shelf changer */
+
+.book-shelf-changer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 15%;
+  background: #60ac5d;
+  background-image: url('./icons/arrow-drop-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.book-shelf-changer select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.main-page .currently-shelf {
+  display: none;
+}
+.currently-shelf {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 110px;
+  height: 30px;
+  border-radius: 10%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.currently-shelf .toReadButton {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: #60ac5d;
+  color: white;
+  font-size: 0.7em;
+  border: 0;
+  border-radius: 10%;
+}
+.currently-shelf .currently-shelf-button {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  color: black;
+  font-size: 0.7em;
+  border: 0;
+  border-radius: 10%;
+}
